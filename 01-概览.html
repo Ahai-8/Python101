@@ -13442,26 +13442,7 @@ body[data-format='mobile'] .jp-InputArea-editor {
 }
 
 .jp-InputPrompt {
-  flex: 0 0 var(--jp-cell-prompt-width);
-  color: var(--jp-cell-inprompt-font-color);
-  font-family: var(--jp-cell-prompt-font-family);
-  padding: var(--jp-code-padding);
-  letter-spacing: var(--jp-cell-prompt-letter-spacing);
-  opacity: var(--jp-cell-prompt-opacity);
-  line-height: var(--jp-code-line-height);
-  font-size: var(--jp-code-font-size);
-  border: var(--jp-border-width) solid transparent;
-  opacity: var(--jp-cell-prompt-opacity);
-  /* Right align prompt text, don't wrap to handle large prompt numbers */
-  text-align: right;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /* Disable text selection */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  font-size: 0;
 }
 
 body[data-format='mobile'] .jp-InputPrompt {
@@ -14498,9 +14479,7 @@ a.anchor-link {
 }
 
 .jp-OutputPrompt {
-  display: table-cell;
-  vertical-align: top;
-  min-width: var(--jp-cell-prompt-width);
+  font-size: 0;
 }
 
 body[data-format='mobile'] .jp-OutputPrompt {
@@ -14614,11 +14593,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
 <span class="c1"># 不经声明就使用变量，会发生错误</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">no_variable</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14653,7 +14632,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;no_variable&#39; is not defined</pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">c:\Users\ahai-8\OneDrive\python101\source\01-概览.ipynb Cell 4&#39;</span> in <span class="ansi-cyan-fg">&lt;cell line: 5&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/ahai-8/OneDrive/python101/source/01-%E6%A6%82%E8%A7%88.ipynb#ch0000003?line=1&#39;&gt;2&lt;/a&gt;</span> print(a)
+<span class="ansi-green-fg">      &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/ahai-8/OneDrive/python101/source/01-%E6%A6%82%E8%A7%88.ipynb#ch0000003?line=3&#39;&gt;4&lt;/a&gt;</span> # 不经声明就使用变量，会发生错误
+<span class="ansi-green-intense-fg ansi-bold">----&gt; &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/ahai-8/OneDrive/python101/source/01-%E6%A6%82%E8%A7%88.ipynb#ch0000003?line=4&#39;&gt;5&lt;/a&gt;</span> print(b)
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;b&#39; is not defined</pre>
 </div>
 </div>
 
@@ -14681,9 +14667,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">variable</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14751,7 +14737,7 @@ print</code></pre>
 <p>变量的推荐命名方式为下划线分割的英文单词，用数字辅助区分。</p>
 
 <pre><code>student_score_list
-day_1_todo</code></pre>
+todo_1</code></pre>
 
 </div>
 </div>
@@ -14768,7 +14754,7 @@ day_1_todo</code></pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14780,15 +14766,40 @@ day_1_todo</code></pre>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">c</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span>
-<span class="n">e</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
-<span class="n">e</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
 
-<span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;My mother says: &quot;You should drink more milk.&quot;&#39;</span>
+<span class="n">e</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;Mom says: &quot;You should drink more milk.&quot;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Mom says: &#34;You should drink more milk.&#34;
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14829,7 +14840,7 @@ day_1_todo</code></pre>
 <span class="n">f</span> <span class="o">=</span> <span class="mi">5</span><span class="o">//</span><span class="mi">2</span>
 <span class="n">g</span> <span class="o">=</span> <span class="mi">5</span><span class="o">%</span><span class="k">2</span>
 
-<span class="nb">print</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14851,7 +14862,7 @@ day_1_todo</code></pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2, 0, 6, 25, 2.5, 2, 1]
+<pre>2 0 6 25 2.5 2 1
 </pre>
 </div>
 </div>
@@ -14903,7 +14914,7 @@ day_1_todo</code></pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>23333333333333333
+<pre>123
 </pre>
 </div>
 </div>
@@ -14919,35 +14930,9 @@ day_1_todo</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>input() 函数还可以接受一个字符串参数来作为提示内容：</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;input a number: &#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>print() 函数字符串插值输出：</p>
+<p><code>input()</code> 函数还可以接受一个字符串参数来作为提示内容：</p>
+<blockquote><p>❗ <code>input()</code> 函数输入内容的类型一定是字符串，如果要作为其他类型变量使用，必须转换类型。</p>
+</blockquote>
 
 </div>
 </div>
@@ -14960,8 +14945,14 @@ day_1_todo</code></pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;1 + 1 = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;input a number: &#39;</span><span class="p">)</span>
+<span class="n">a_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a_string</span><span class="p">)</span>
+
+<span class="n">b1</span> <span class="o">=</span> <span class="n">a_number</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b1 =&#39;</span><span class="p">,</span><span class="n">b1</span><span class="p">)</span>
+
+<span class="n">b2</span> <span class="o">=</span> <span class="n">a_string</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b2 =&#39;</span><span class="p">,</span><span class="n">b2</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14983,7 +14974,79 @@ day_1_todo</code></pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1 + 1 = 2
+<pre>b1 = 124
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">c:\Users\ahai-8\OneDrive\python101\source\01-概览.ipynb Cell 16&#39;</span> in <span class="ansi-cyan-fg">&lt;cell line: 7&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/ahai-8/OneDrive/python101/source/01-%E6%A6%82%E8%A7%88.ipynb#ch0000015?line=3&#39;&gt;4&lt;/a&gt;</span> b1 = a_number + 1
+<span class="ansi-green-fg">      &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/ahai-8/OneDrive/python101/source/01-%E6%A6%82%E8%A7%88.ipynb#ch0000015?line=4&#39;&gt;5&lt;/a&gt;</span> print(&#39;b1 =&#39;,b1)
+<span class="ansi-green-intense-fg ansi-bold">----&gt; &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/ahai-8/OneDrive/python101/source/01-%E6%A6%82%E8%A7%88.ipynb#ch0000015?line=6&#39;&gt;7&lt;/a&gt;</span> b2 = a_string + 1
+<span class="ansi-green-fg">      &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/ahai-8/OneDrive/python101/source/01-%E6%A6%82%E8%A7%88.ipynb#ch0000015?line=7&#39;&gt;8&lt;/a&gt;</span> print(&#39;b2 =&#39;,b2)
+
+<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: can only concatenate str (not &#34;int&#34;) to str</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><code>print()</code> 函数一次输出多个值:</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1 2 3
 </pre>
 </div>
 </div>
@@ -15076,7 +15139,7 @@ day_1_todo</code></pre>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>
-<span class="ansi-cyan-intense-fg ansi-bold">  Input </span><span class="ansi-green-intense-fg ansi-bold">In [27]</span>
+<span class="ansi-cyan-intense-fg ansi-bold">  Input </span><span class="ansi-green-intense-fg ansi-bold">In [6]</span>
 <span class="ansi-yellow-intense-fg ansi-bold">    a = 1 b = 2 while a&lt;10:a = a+1</span>
 <span class="ansi-white-intense-fg ansi-bold">          ^</span>
 <span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
@@ -15128,7 +15191,7 @@ day_1_todo</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>多行注释以 <code>"""</code> 或 <code>'''</code> 前后包括：</p>
+<p>多行注释以 """ 或 ''' 前后包括：</p>
 
 </div>
 </div>
@@ -15166,7 +15229,7 @@ day_1_todo</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98">&#35838;&#21518;&#20064;&#39064;<a class="anchor-link" href="#%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98">&#182;</a></h2><p>运用本节课的知识编写一段程序：要求用户输入一个价格（整数），计算出如何用最少的20元，10元，5元，1元的纸币付款。</p>
+<h2 id="%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98">&#35838;&#21518;&#20064;&#39064;<a class="anchor-link" href="#%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98">&#182;</a></h2><p>运用本节课的知识编写一段程序：要求用户输入一个价格（整数），计算出如何用最少的20元，10元，5元，1元纸币来付款。</p>
 <p>运行结果示例：</p>
 
 <pre><code>Please input a price: 77
